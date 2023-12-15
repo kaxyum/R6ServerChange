@@ -1,2 +1,2 @@
-# R6ServerChange
-A simple c++ app to change the R6 server
+# How To Use ?
+[watch this video](https://youtube.com)
