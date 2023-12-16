@@ -6,6 +6,7 @@
 class Utils {
 public:
     std::string getFileUsername();
+    std::string getPathId();
     void setServer(std::string server);
     bool isRunning();
     void openR6();

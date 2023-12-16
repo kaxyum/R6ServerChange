@@ -6,6 +6,7 @@
 #include <cstring>
 #include <thread>
 
+
 std::string Utils::getFileUsername()
 {
     std::string username;
@@ -20,9 +21,23 @@ std::string Utils::getFileUsername()
     return username;
 }
 
+std::string Utils::getPathId()
+{
+    std::string path = "C:\\Users\\" + getFileUsername() + "\\OneDrive\\Documents\\My Games\\Rainbow Six - Siege";
+    std::string pathId = "";
+    for (const auto& entry : std::filesystem::directory_iterator(path))
+    {
+        if (std::filesystem::is_directory(entry.path()))
+        {
+            pathId = entry.path().filename().string();
+        }
+    }
+    return pathId;
+}
+
 void Utils::setServer(std::string server)
 {
-    const std::string path = "C:\\Users\\" + getFileUsername() + "\\OneDrive\\Documents\\My Games\\Rainbow Six - Siege\\c2a5177d-4109-45a9-9b55-d21639583ddf\\GameSettings.ini";
+    const std::string path = "C:\\Users\\" + getFileUsername() + "\\OneDrive\\Documents\\My Games\\Rainbow Six - Siege\\" + getPathId() + "\\GameSettings.ini";
     std::ifstream configFile(path);
     std::ostringstream updatedConfig;
     std::string line;
