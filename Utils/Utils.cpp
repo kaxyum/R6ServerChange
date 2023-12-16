@@ -21,7 +21,7 @@ std::string Utils::getFileUsername()
     return username;
 }
 
-std::string Utils::getPathId()
+std::string Utils::getFileId()
 {
     std::string path = "C:\\Users\\" + getFileUsername() + "\\OneDrive\\Documents\\My Games\\Rainbow Six - Siege";
     std::string pathId = "";
@@ -37,7 +37,7 @@ std::string Utils::getPathId()
 
 void Utils::setServer(std::string server)
 {
-    const std::string path = "C:\\Users\\" + getFileUsername() + "\\OneDrive\\Documents\\My Games\\Rainbow Six - Siege\\" + getPathId() + "\\GameSettings.ini";
+    const std::string path = "C:\\Users\\" + getFileUsername() + "\\OneDrive\\Documents\\My Games\\Rainbow Six - Siege\\" + getFileId() + "\\GameSettings.ini";
     std::ifstream configFile(path);
     std::ostringstream updatedConfig;
     std::string line;
