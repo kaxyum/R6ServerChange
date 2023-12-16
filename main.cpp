@@ -160,12 +160,12 @@ int main()
     restartText.setFillColor(sf::Color::Black);
     restartText.setPosition(850.f,487.5f);
 
-    sf::RectangleShape startButton(sf::Vector2f(200,60));
+    sf::RectangleShape startButton(sf::Vector2f(300,90));
     startButton.setPosition(822.f,470.f);
     startButton.setFillColor(sf::Color::White);
     startButton.setOutlineColor(sf::Color::Black);
     startButton.setOutlineThickness(10);
-    sf::Text startText("START R6", font, 20);
+    sf::Text startText("START R6", font, 40);
     startText.setFillColor(sf::Color::Black);
     startText.setPosition(875.f,487.5f);
 
@@ -382,6 +382,9 @@ int main()
             {
                 window.draw(restartButton);
                 window.draw(restartText);
+            }else{
+                window.draw(startButton);
+                window.draw(startText);
             }
         }
 
